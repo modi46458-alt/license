@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+/* Tokens: light is default, dark follows the system setting. */
+:root {
+  --paper: #f5f6f8;
+  --surface: #ffffff;
+  --ink: #1c2433;
+  --muted: #5e6878;
+  --rule: #dde1e7;
+  --ok: #1e8a6a;
+  --wait: #a8661a;
+  --fail: #b4382f;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #151a22;
+    --surface: #1c222c;
+    --ink: #e6e9ee;
+    --muted: #97a1b0;
+    --rule: #2c3440;
+    --ok: #3dbe95;
+    --wait: #e0a444;
+    --fail: #e26a5f;
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rule: var(--rule);
+  --color-ok: var(--ok);
+  --color-wait: var(--wait);
+  --color-fail: var(--fail);
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

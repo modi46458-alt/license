@@ -1,0 +1,46 @@
+{
+  "name": "indiamart-smart-lead-intelligence",
+  "private": true,
+  "version": "0.6.1",
+  "description": "Lead intelligence for IndiaMART Lead Manager: scanning, scoring, and safe user-controlled actions.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite build --watch --mode development",
+    "build": "npm run build:app && npm run build:content",
+    "build:app": "vite build",
+    "build:content": "vite build --config vite.content.config.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc -p tsconfig.node.json && npm --prefix server run typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run && npm --prefix server test",
+    "test:watch": "vitest",
+    "validate": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "bench": "vitest run --config vitest.bench.config.ts",
+    "test:extension": "vitest run",
+    "test:server": "npm --prefix server test"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/chrome": "^0.3.0",
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "eslint": "^10.11.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.12.0",
+    "jsdom": "^30.1.1",
+    "prettier": "^3.9.9",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.1",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.1"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  }
+}
